@@ -37,6 +37,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     padding: 50px 0;
+    pointer-events: none;
 }
 
 .circle {
@@ -74,7 +75,7 @@ button {
     position: relative;
 }
 
-button.close {
+#close {
     position: absolute;
     top: 2vh;
     right: 2vh;
@@ -96,4 +97,12 @@ button.close {
 
 #result {
     padding: 30px;
+}
+
+.active {
+    background-color: rgb(90, 197, 211);
+}
+
+#stop {
+    display: none;
 }
