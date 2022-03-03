@@ -17,7 +17,9 @@
         <div class="container">
             <header><h1>Speedgame</h1></header>
             <main>
-                <div class="score">Your score</div>
+                <div class="score-area">
+                    Your score is: <span id="score">0</span>
+                </div>
                 <div class="circles">
                     <div class="circle">1</div>
                     <div class="circle">2</div>
@@ -25,14 +27,17 @@
                     <div class="circle">4</div>
                 </div>
                 <div class="buttons">
-                    <button>Start game</button>
-                    <button>Stop game</button>
+                    <button type="button" id="start">Start game</button>
+                    <button type="button" id="stop">Stop game</button>
                 </div>
             </main>
         </div>
-        <div class="game-over hidden">
-            <div class="message">game over</div>
-            <button class="close">X</button>
+        <div class="overlay">
+            <div class="modal">
+                <p>Game over!</p>
+                <p id="result">Your score is</p>
+                <button class="close">X</button>
+            </div>
         </div>
         <script src="main.js"></script>
     </body>
