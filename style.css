@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --dark: rgb(53, 53, 53);
+    --light: rgb(245, 245, 245);
+}
+
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Space Mono", monospace;
     background-image: linear-gradient(
-        45deg,
+        180deg,
         rgb(122, 191, 255),
         rgb(122, 255, 117),
         rgb(255, 244, 97)
@@ -17,6 +22,9 @@ body {
 }
 
 h1 {
+    font-family: "Bungee Shade", cursive;
+    font-size: 3rem;
+    color: var(--dark);
     text-align: center;
 }
 
@@ -26,11 +34,12 @@ h1 {
 }
 
 .container {
-    background-color: rgb(245, 245, 245);
-    width: 60vw;
+    background-color: var(--light);
+    width: 800px;
     padding: 50px;
     margin: 20px auto 0 auto;
-    border-radius: 10px;
+    border-radius: 30px;
+    border: 8px double var(--dark);
 }
 
 .circles {
@@ -41,10 +50,10 @@ h1 {
 }
 
 .circle {
-    border: 1px solid black;
+    border: 3px solid var(--dark);
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-color: white;
     cursor: pointer;
 }
@@ -56,11 +65,13 @@ h1 {
 
 button {
     font-family: inherit;
-    border: none;
-    padding: 10px;
-    border-radius: 3px;
-    background-color: rgb(90, 197, 211);
-    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: 3px solid var(--dark);
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--light);
+    color: var(--dark);
 }
 
 .modal {
@@ -100,7 +111,10 @@ button {
 }
 
 .active {
-    background-color: rgb(90, 197, 211);
+    background-image: url("./bug.png");
+    background-position: center;
+    background-size: 30px auto;
+    background-repeat: no-repeat;
 }
 
 #stop {

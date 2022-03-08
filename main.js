@@ -1,3 +1,21 @@
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function () {
+        this.sound.play();
+    };
+    this.stop = function () {
+        this.sound.pause();
+    };
+}
+
+let music = new sound("puppy_playing_in_the_garden.ogg");
+let gameOver = new sound("game_over.wav");
+
 const startBtn = document.querySelector("#start");
 const stopBtn = document.querySelector("#stop");
 const closeBtn = document.querySelector("#close");
@@ -29,6 +47,8 @@ const clickedCircle = (i) => {
 };
 
 const startGame = () => {
+    music.play();
+
     startBtn.style.display = "none";
     stopBtn.style.display = "inline";
 
@@ -42,7 +62,6 @@ const startGame = () => {
     circles[active].classList.remove("active");
 
     active = nextActive;
-    console.log("active circle: ", active);
     timer = setTimeout(startGame, pace);
     pace = pace - 10;
 
@@ -66,7 +85,8 @@ const startGame = () => {
 };
 
 const endGame = () => {
-    console.log("game ended");
+    music.stop();
+    gameOver.play();
     overlay.style.visibility = "visible";
     clearTimeout(timer);
     result.textContent = `Your score is ${score}`;
