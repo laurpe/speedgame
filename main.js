@@ -61,6 +61,8 @@ const startGame = () => {
     circles[nextActive].classList.toggle("active");
     circles[active].classList.remove("active");
 
+    rotateImage(circles[nextActive]);
+
     active = nextActive;
     timer = setTimeout(startGame, pace);
     pace = pace - 10;
@@ -99,3 +101,10 @@ const reloadGame = () => {
 startBtn.addEventListener("click", startGame);
 stopBtn.addEventListener("click", endGame);
 closeBtn.addEventListener("click", reloadGame);
+
+const rotateImage = (circle) => {
+    let max = 360;
+    let min = -360;
+    let degrees = Math.floor(Math.random() * (max - min) + min);
+    circle.style.transform = `rotate(${degrees}deg)`;
+};
