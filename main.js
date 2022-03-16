@@ -13,8 +13,9 @@ function sound(src) {
     };
 }
 
-let music = new sound("puppy_playing_in_the_garden.ogg");
-let gameOver = new sound("game_over.wav");
+const music = new sound("puppy_playing_in_the_garden.ogg");
+const gameOver = new sound("game_over.wav");
+const splat = new sound("splat.ogg");
 
 const startBtn = document.querySelector("#start");
 const stopBtn = document.querySelector("#stop");
@@ -41,6 +42,7 @@ const clickedCircle = (i) => {
     if (i !== active) {
         endGame();
     } else {
+        splat.play();
         score++;
         rounds--;
         scoreText.textContent = score;
