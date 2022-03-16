@@ -23,6 +23,7 @@ const overlay = document.querySelector(".overlay");
 const circles = document.querySelectorAll(".circle");
 const scoreText = document.querySelector("#score");
 const result = document.querySelector("#result");
+const resultMessage = document.querySelector("#result-message");
 
 let active = 0;
 let score = 0;
@@ -82,8 +83,6 @@ const startGame = () => {
             return pickNew(active);
         }
     }
-
-    console.log("score", score);
 };
 
 const endGame = () => {
@@ -91,7 +90,16 @@ const endGame = () => {
     gameOver.play();
     overlay.style.visibility = "visible";
     clearTimeout(timer);
-    result.textContent = `Your score is ${score}`;
+    result.textContent = `Your score is ${score}.`;
+    if (score >= 40) {
+        resultMessage.textContent = "Amazing!";
+    } else if (score >= 25) {
+        resultMessage.textContent = "Great job!";
+    } else if (score >= 5) {
+        resultMessage.textContent = "Nice work!";
+    } else {
+        resultMessage.textContent = "Try a bit harder next time!";
+    }
 };
 
 const reloadGame = () => {

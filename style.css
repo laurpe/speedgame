@@ -5,12 +5,13 @@
 }
 
 :root {
-    --dark: rgb(53, 53, 53);
-    --light: rgb(245, 245, 245);
+    --dark: rgb(38, 74, 78);
+    --light: rgb(226, 241, 239);
 }
 
 body {
     font-family: "Space Mono", monospace;
+    color: var(--dark);
     background-image: linear-gradient(
         180deg,
         rgb(122, 191, 255),
@@ -34,12 +35,8 @@ h1 {
 }
 
 .container {
-    background-color: var(--light);
-    width: 800px;
-    padding: 50px;
-    margin: 20px auto 0 auto;
-    border-radius: 30px;
-    border: 8px double var(--dark);
+    width: 700px;
+    margin: 100px auto 0 auto;
 }
 
 .circles {
@@ -50,11 +47,11 @@ h1 {
 }
 
 .circle {
-    border: 3px solid var(--dark);
+    border: 2px solid var(--dark);
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    background-color: white;
+    background-color: var(--light);
     cursor: pointer;
 }
 
@@ -67,7 +64,7 @@ button {
     font-family: inherit;
     font-size: 1rem;
     text-transform: uppercase;
-    border: 3px solid var(--dark);
+    border: 2px solid var(--dark);
     padding: 15px;
     border-radius: 5px;
     background-color: var(--light);
@@ -75,7 +72,7 @@ button {
 }
 
 .modal {
-    width: 40vw;
+    width: 50vw;
     height: 30vh;
     background-color: white;
     border-radius: 10px;
@@ -84,12 +81,12 @@ button {
     justify-content: center;
     align-items: center;
     position: relative;
+    background-color: var(--light);
+    border: 2px solid var(--dark);
 }
 
-#close {
-    position: absolute;
-    top: 2vh;
-    right: 2vh;
+#result-message {
+    padding-bottom: 50px;
 }
 
 .overlay {
