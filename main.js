@@ -15,7 +15,6 @@ function sound(src) {
 
 const music = new sound("puppy_playing_in_the_garden.ogg");
 const gameOver = new sound("game_over.wav");
-const splat = new sound("splat.ogg");
 
 const startBtn = document.querySelector("#start");
 const stopBtn = document.querySelector("#stop");
@@ -42,6 +41,7 @@ const clickedCircle = (i) => {
     if (i !== active) {
         endGame();
     } else {
+        const splat = new sound("splat.ogg");
         splat.play();
         score++;
         rounds--;

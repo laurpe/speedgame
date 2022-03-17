@@ -108,7 +108,7 @@ button {
 }
 
 .active {
-    background-image: url("./bug.png");
+    background-image: url("./green_bug.png");
     background-position: center;
     background-size: 30px auto;
     background-repeat: no-repeat;
